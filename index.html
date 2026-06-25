@@ -23,30 +23,26 @@
          <img src="image/logo.png" alt="VMS TEC" style="width: 90px; height: auto;">
         </div>
 
-        <ul class="menu">
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Projetos</a></li>
-          <li><a href="#">Contato</a></li>
+        <ul class="menu" id="mobileMenu">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
 
-        <a href="#" class="btn">
-          WhatsApp
-        </a>
 
-        <div class="menu-mobile">
-          ☰
+        <div class="menu-mobile" id="menuButton">
+         ☰
         </div>
 
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <section id="home" class="hero">
     <div class="container hero-content">
 
-     <div class="hero-image">
+     <div class="hero-image " style="margin-top: -50px">
 
         <img 
           class="mockup"
@@ -74,11 +70,11 @@
 
         <div class="hero-buttons">
 
-          <a href="#" class="btn btn-gold">
+          <a href="#projetos" class="btn btn-gold">
             Ver Projetos
           </a>
 
-          <a href="#" class="btn">
+          <a href="https://wa.me/5511987186358" class="btn" target="_blank">
             Fale comigo
           </a>
 
@@ -91,7 +87,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="servicos">
 
     <div class="container">
 
@@ -161,14 +157,14 @@
 
   </section>
 
-  <section class="projects">
+  <section id="projetos" class="projects">
 
     <div class="container">
 
       <div class="section-title">
 
         <h2>
-          Alguns projetos que <span>desenvolvi</span>
+          Projetos em <span>Destaque</span>
         </h2>
 
       </div>
@@ -177,47 +173,57 @@
 
         <div class="project">
 
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/reys.jfif">
 
           <div class="project-content">
-            <h3>Metalúrgica Alvorada</h3>
-            <p>Site institucional premium.</p>
-            <a href="#" class="btn">Ver Projeto</a>
+            <h3>Studio Reys</h3>
+            <p>Landing page premium.</p>
+            <a href="https://studioreys.com.br" class="btn" target="_blank">Ver Projeto</a>
           </div>
 
         </div>
 
         <div class="project">
 
-          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/valdir.jfif">
 
           <div class="project-content">
-            <h3>PetLife</h3>
+            <h3>Valdir Contabilidade</h3>
             <p>Landing page de alta conversão.</p>
-            <a href="#" class="btn">Ver Projeto</a>
+            <a href="https://valdircontabilidade.com.br" class="btn" target="_blank">Ver Projeto</a>
           </div>
 
         </div>
 
         <div class="project">
 
-          <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/society.jpeg">
 
           <div class="project-content">
-            <h3>ImobPrime</h3>
-            <p>Experiência digital sofisticada.</p>
-            <a href="#" class="btn">Ver Projeto</a>
+            <h3>Society FC</h3>
+            <p>Landing page de alta conversão para alocação de campos society.</p>
+            <a href="https://vms-tec.github.io/brasiliafc/" class="btn" target="_blank">Ver Projeto</a>
           </div>
 
         </div>
 
+
+          <div class="project">
+            
+          <img src="image/esteticista.png">
+
+          <div class="project-content">
+            <h3>Estética</h3>
+            <p>Landing page simples.</p>
+            <a href="https://vms-tec.github.io/estetica/" class="btn" target="_blank">Ver Projeto</a>
+          </div>
       </div>
 
     </div>
 
   </section>
 
-  <section>
+  <section id="contato">
 
     <div class="container">
 
@@ -232,7 +238,7 @@
           Aqui a ideia entra crua e sai vestida de ouro. ✨
         </p>
 
-        <a href="#" class="btn btn-gold">
+        <a href="https://wa.me/5511987186358" class="btn btn-gold" target="_blank">
           Solicitar orçamento
         </a>
 
@@ -257,15 +263,35 @@
 
       <div class="socials">
 
-        <a href="#">IG</a>
-        <a href="#">IN</a>
-        <a href="#">WA</a>
+        <a href="https://www.instagram.com/vms.tec" target="_blank">IG</a>
+        <a href="https://wa.me/5511987186358" target="_blank">WA</a>
 
       </div>
 
     </div>
 
   </footer>
+
+<script>
+
+  const menuButton = document.getElementById("menuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+  });
+
+  const menuLinks = mobileMenu.querySelectorAll("a");
+
+  // Para cada link encontrado, adicionamos um evento de clique
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      // Remove a classe 'active', fechando o menu
+      mobileMenu.classList.remove("active");
+    });
+  });
+
+</script>
 
 </body>
 </html>    
